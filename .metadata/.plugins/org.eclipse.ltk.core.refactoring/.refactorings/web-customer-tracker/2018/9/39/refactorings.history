@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;tempCustomer&apos; in &apos;com.chrisyoo.springdemo.dao.CusomterDaoImpl.getCustomer(...)&apos; to &apos;theCustomer&apos;&#x0A;- Original project: &apos;web-customer-tracker&apos;&#x0A;- Original element: &apos;com.chrisyoo.springdemo.dao.CusomterDaoImpl.getCustomer(int).tempCustomer&apos;&#x0A;- Renamed element: &apos;tempCustomer&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;tempCustomer&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.chrisyoo.springdemo.dao{CusomterDaoImpl.java[CusomterDaoImpl~getCustomer~I@tempCustomer!1131!1196!1140!1151!QCustomer;!0!false" name="theCustomer" references="true" stamp="1538158229572" version="1.0"/>
+</session>

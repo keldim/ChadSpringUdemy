@@ -1,0 +1,8 @@
+//com.springsource.config.ui.prefs.activePageIndex\:/spring-demo-annotations/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/spring-demo-one/applicationContext.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/spring-demo-one/beans.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/spring-mvc-demo/WebContent/WEB-INF/spring-mvc-demo-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/spring-security-demo/WebContent/WEB-INF/spring-mvc-crud-demo-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/web-customer-tracker-aop/WebContent/WEB-INF/spring-mvc-crud-demo-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage id\="com.springsource.sts.config.ui.editors.aop" index\="3" kind\="formPage" uri\="http\://www.springframework.org/schema/aop"/>
+//com.springsource.config.ui.prefs.activePageIndex\:/web-customer-tracker/WebContent/WEB-INF/spring-mvc-crud-demo-servlet.xml=<?xml version\="1.0" encoding\="UTF-8"?>\n<activePage index\="0"/>
+eclipse.preferences.version=1

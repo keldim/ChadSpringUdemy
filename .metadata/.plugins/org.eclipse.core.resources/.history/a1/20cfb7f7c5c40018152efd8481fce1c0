@@ -1,0 +1,5 @@
+package com.chrisyoo.aopdemo.dao;
+
+public class AccountDAO {
+
+}

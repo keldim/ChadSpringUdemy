@@ -1,0 +1,5 @@
+package com.chrisyoo.aopdemo.aspect;
+
+public class MyCloudLogAsyncAspect {
+
+}

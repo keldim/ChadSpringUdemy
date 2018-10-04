@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Oct 03 21:59:52 EDT 2018
+org.eclipse.jst.jee.server\:/binary\:/Users/ChrisYoo/.m2/repository/org/springframework/spring-web/5.0.6.RELEASE/spring-web-5.0.6.RELEASE.jar=/Library/Tomcat/wtpwebapps/spring-crm-rest-demo/WEB-INF/lib/spring-web-5.0.6.RELEASE.jar
+org.eclipse.jst.jee.server\:spring-crm-rest-demo=/Library/Tomcat/wtpwebapps/spring-crm-rest-demo
