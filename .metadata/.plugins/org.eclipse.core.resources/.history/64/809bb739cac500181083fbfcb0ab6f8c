@@ -1,5 +1,0 @@
-package com.chrisyoo.springsecurity.demo.config;
-
-public class DemoAppConfig {
-
-}
