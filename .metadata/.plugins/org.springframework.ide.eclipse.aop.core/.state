@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="spring-rest-demo"/>
+<aop-project name="01-spring-boot-demo"/>
+<aop-project name="03-actuator-demo"/>
+<aop-project name="05-properties-demo"/>
+<aop-project name="04-command-line-demo"/>
+<aop-project name="02-dev-tools-demo"/>
 </aop-reference-model>

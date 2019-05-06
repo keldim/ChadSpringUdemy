@@ -39,6 +39,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/mycoolapp"/>
 			<item value="/Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/spring-crm-rest-demo"/>
 			<item value="/Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/spring-rest-demo"/>
 			<item value="/Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/jackson-databinding-json-demo"/>
