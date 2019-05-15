@@ -5,7 +5,145 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-05-15T00:00:00Z</updated>
+  <updated>2019-05-15T16:10:00Z</updated>
+  <entry>
+    <title>Spring Data R2DBC 1.0 M2 and Spring Boot starter released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-data-r2dbc-1-0-m2-and-spring-boot-starter-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-05-14:3678</id>
+    <updated>2019-05-15T16:10:00Z</updated>
+    <content type="html">&lt;h2&gt;&lt;a href="#spring-data-r2dbc" class="anchor" name="spring-data-r2dbc"&gt;&lt;/a&gt;Spring Data R2DBC&lt;/h2&gt;
+&lt;p&gt;On behalf of the community and everyone who contributed, I&amp;rsquo;m delighted to announce the availability of the second milestone of Spring Data R2DBC 1.0. It is based on the recently released &lt;a href="https://spring.io/blog/2019/05/14/spring-data-moore-m4-lovelace-sr8-and-ingalls-sr22-released"&gt;Moore M4 release&lt;/a&gt; and &lt;a href="https://r2dbc.io/2019/05/13/r2dbc-0-8-milestone-8-released"&gt;R2DBC 0.8.0.M8 release&lt;/a&gt;. Please note that Spring Data R2DBC is released outside of the Moore release train and it will be part of the next release train &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Neumann"&gt;Neumann&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Spring Data R2DBC ships with &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/milestone/2?closed=1"&gt;32 tickets fixed&lt;/a&gt;. The most notable features are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support for MySQL by using &lt;a href="https://github.com/jasync-sql/jasync-sql"&gt;jasync-sql&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Reactive transaction manager.&lt;/li&gt;
+  &lt;li&gt;Fluent API for &lt;code&gt;insert&lt;/code&gt;/&lt;code&gt;update&lt;/code&gt;/&lt;code&gt;delete&lt;/code&gt; operations.&lt;/li&gt;
+  &lt;li&gt;Coroutine extensions.&lt;/li&gt;
+  &lt;li&gt;Support for custom conversions.&lt;/li&gt;
+  &lt;li&gt;Named parameters that are translated to native bind markers by using &lt;code&gt;Dialect&lt;/code&gt; instances.&lt;/li&gt;
+  &lt;li&gt;Support for single-column projections for simple types.&lt;/li&gt;
+  &lt;li&gt;Refactored package structure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you use Maven, include the following lines in your &lt;code&gt;pom.xml&lt;/code&gt; to use Spring Data R2DBC 1.0 M2 in your project:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencies&amp;gt;&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.data&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-data-r2dbc&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;1.0.0.M2&amp;lt;/version&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+&amp;lt;/dependencies&amp;gt;&#xD;
+&#xD;
+&amp;lt;!-- R2DBC 0.8.0.M8 required --&amp;gt;&#xD;
+&amp;lt;dependencyManagement&amp;gt;&#xD;
+  &amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+      &amp;lt;groupId&amp;gt;io.r2dbc&amp;lt;/groupId&amp;gt;&#xD;
+      &amp;lt;artifactId&amp;gt;r2dbc-bom&amp;lt;/artifactId&amp;gt;&#xD;
+      &amp;lt;version&amp;gt;Arabba-M8&amp;lt;/version&amp;gt;&#xD;
+      &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+      &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+  &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&#xD;
+&amp;lt;repositories&amp;gt;&#xD;
+  &amp;lt;repository&amp;gt;&#xD;
+    &amp;lt;id&amp;gt;spring-milestone&amp;lt;/id&amp;gt;&#xD;
+    &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+  &amp;lt;/repository&amp;gt;&#xD;
+&amp;lt;/repositories&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#spring-boot-autoconfiguration-and-actuator" class="anchor" name="spring-boot-autoconfiguration-and-actuator"&gt;&lt;/a&gt;Spring Boot Autoconfiguration and Actuator&lt;/h2&gt;
+&lt;p&gt;Together with this release, I&amp;rsquo;d also like to announce a milestone release of Spring Boot support for R2DBC 0.1.0.M1. This is an experimental Spring Boot module that provides auto-configuration and actuator support. It is marked as experimental, as this support is likely to get merged into a future Spring Boot release eventually.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s what you get from the experimental Spring Boot support for R2DBC:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;URL-based configuration of R2DBC &lt;code&gt;ConnectionFactory&lt;/code&gt; (&lt;code&gt;spring.r2dbc.url=rdbc:postgresql://&amp;lt;server&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;database&amp;gt;&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Embedded database support for H2. H2 is configured for both R2DBC and JDBC access when &lt;code&gt;r2dbc-h2&lt;/code&gt; and &lt;code&gt;spring-jdbc&lt;/code&gt; are available.&lt;/li&gt;
+  &lt;li&gt;Connection pool support (&lt;code&gt;spring.r2dbc.pool.initial-size&lt;/code&gt;, &lt;code&gt;spring.r2dbc.pool.max-size&lt;/code&gt;, &lt;code&gt;spring.r2dbc.validation-query&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Actuator support by exposing a reactive &lt;code&gt;ConnectionFactoryHealthIndicator&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Configuration of &lt;code&gt;R2dbcConnectionManager&lt;/code&gt; enabling reactive &lt;code&gt;@Transactional&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Configuration of &lt;code&gt;TransactionalOperator&lt;/code&gt; bean.&lt;/li&gt;
+  &lt;li&gt;Configuration of &lt;code&gt;r2dbc-client&lt;/code&gt; by exposing a &lt;code&gt;R2dbc&lt;/code&gt; bean.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencies&amp;gt;&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.boot.experimental&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-boot-starter-data-r2dbc&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.1.0.M1&amp;lt;/version&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.boot.experimental&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-boot-actuator-autoconfigure-r2dbc&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.1.0.M1&amp;lt;/version&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+  &#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;io.r2dbc&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;r2dbc-postgresql&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.8.0.M8&amp;lt;/version&amp;gt;&#xD;
+    &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+  &#xD;
+  &amp;lt;!-- Enable for connection pooling --&amp;gt;&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;io.r2dbc&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;r2dbc-pool&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+&amp;lt;/dependencies&amp;gt;&#xD;
+&#xD;
+&amp;lt;repositories&amp;gt;&#xD;
+  &amp;lt;repository&amp;gt;&#xD;
+    &amp;lt;id&amp;gt;spring-milestone&amp;lt;/id&amp;gt;&#xD;
+    &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+  &amp;lt;/repository&amp;gt;&#xD;
+&amp;lt;/repositories&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-projects-experimental/spring-boot-r2dbc#spring-boot-r2dbc-starter"&gt;repository readme&lt;/a&gt; and our &lt;a href="https://github.com/spring-projects-experimental/spring-boot-r2dbc/blob/master/documentation.adoc"&gt;documentation&lt;/a&gt; are the best places to get you started. Also, make sure to check out our &lt;a href="https://github.com/spring-projects-experimental/spring-boot-r2dbc/tree/master/spring-boot-example-h2"&gt;Spring WebFlux/R2DBC/H2 example&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next steps&lt;/h2&gt;
+&lt;p&gt;R2DBC continues to evolve. We expect another series of R2DBC releases in the October timeframe so that we can pick up these in Spring Data R2DBC and eventually ship a release candidate. Our backlog contains a series of refinements around dialect support for an improved extensibility model, and we look forward to allowing for query interception to alter bindings and SQL statements before they are sent to a database.&lt;/p&gt;
+&lt;p&gt;To round things off, here are links to the changelog, GitHub repository, and docs:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Project Repository: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc"&gt;github.com/spring-projects/spring-data-r2dbc&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Issue Tracker: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/issues"&gt;github.com/spring-projects/spring-data-r2dbc/issues&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-r2dbc/1.0.0.M2/"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.M2/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.M2/reference/html/"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.M2/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.1.5 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-boot-2-1-5-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3681</id>
+    <updated>2019-05-15T12:00:32Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Boot 2.1.5 has been released and is now available from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;This is a maintenance release that includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.5.RELEASE"&gt;a number of important dependency updates and bug fixes&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;A gentle reminder that Spring Boot 1.5 will be &lt;a href="https://spring.io/blog/2018/07/30/spring-boot-1-x-eol-aug-1st-2019"&gt;end of life in august&lt;/a&gt;, so all users should now be upgrading to Spring Boot 2.1.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.5.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.2 M3 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-boot-2-2-m3-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3682</id>
+    <updated>2019-05-15T10:08:57Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the third milestone of Spring Boot 2.2 has been released and is available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release closes over &lt;a href="https://github.com/spring-projects/spring-boot/milestone/135?closed=1"&gt;100 issues and pull requests&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes"&gt;Spring Boot 2.2 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M3/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to get started with 2.2 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M3/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Spring Batch and Apache Kafka</title>
     <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-tips-spring-batch-and-apache-kafka" />
@@ -743,90 +881,5 @@ and Spring Session 2.1.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - April 30th, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/30/this-week-in-spring-april-30th-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-04-30:3661</id>
-    <updated>2019-04-30T18:38:14Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans and welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m in colorful Chicago, Illinois, and magnificent Milwaukee, Wisconsin. I am &lt;em&gt;so&lt;/em&gt; excited to be in both places. I&amp;rsquo;m in Chicago for the GOTO Chicago event, which is always fun, and I&amp;rsquo;m in Milwaukee for a meetup and, of course, to partake of local delicacies like Kopps, a Cousins sub, and a Spotted Cow beer. Life is &lt;em&gt;great&lt;/em&gt;! &lt;/p&gt;
-&lt;p&gt;Did you see this epic image of the Chicago Lakeshore area I took the other day? Spring is truly in full swing! (I&amp;rsquo;ll ignore the buckets of rain that have been dumped on Chicago and Milwaukee just a day after that photo was taken&amp;hellip;) &lt;/p&gt;
-&lt;img src = "https://content.cdntwrk.com/files/aHViPTYzOTc1JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVjYzc0M2RmYTczM2YuanBnJnZlcnNpb249MDAwMCZzaWc9MGE2M2IxNzkwZTFhOTlmN2NmZTc1MzYzOTAyOGQ4Njc%253D" width ="600" /&gt;
-&lt;p&gt;Anyway we&amp;rsquo;ve got tons of stuff to get into so, let&amp;rsquo;s! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Check out the latest edition &lt;a href="https://content.pivotal.io/blog/this-month-in-spring-april-2019"&gt;of &lt;em&gt;This Month in Spring&lt;/em&gt;&lt;/a&gt;. It captures all the stuff we&amp;rsquo;ve covered in &lt;em&gt;This Week in Spring&lt;/em&gt; and highlights all the good stuff I&amp;rsquo;ve been trying to work on as well. Surely there&amp;rsquo;s something you&amp;rsquo;ve missed?&lt;/li&gt;
-  &lt;li&gt;Five years into their journey with Pivotal Cloud Foundry, Liberty Mutual is not standing still. I liked this episode of &lt;em&gt;Pivotal Conversations&lt;/em&gt; with &lt;a href="https://content.pivotal.io/podcasts/not-standing-still-in-secure-devops-with-jai-schniepp-of-liberty-mutual"&gt;Liberty Mutual&amp;rsquo;s Jai Schniepp&lt;/a&gt;. Also, a great podcast and worth a listen!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-3-0-0-released"&gt;Spring Cloud Open Service Broker 3.0.0 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-2-1-2-released"&gt;Spring Cloud Open Service Broker 2.1.2 Released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/26/a-bootiful-podcast-spring-batch-and-spring-cloud-task-lead-michael-minella"&gt;A Bootiful Podcast: Spring Batch and Spring Cloud Task lead Michael Minella&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/24/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-rc1-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.0.0.RC1 Released!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/04/24/spring-tips-spring-cloud-circuit-breaker"&gt;Spring Tips: Spring Cloud Circuit Breaker&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This Java Techie video looks kinda interesting - it introduces &lt;a href="https://www.youtube.com/watch?v=Dd9-UxrNiD0"&gt;using Spring Cloud Consul for service discovery&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This Portguese-language video on monitoring Spring Boot applications &lt;a href="https://www.youtube.com/watch?v=jd6i9e-NNRM"&gt;with Actuator looks interesting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;InfoQ have a nice piece on upgrading Java applications from Java 8 to 11. &lt;a href="https://www.infoq.com/articles/upgrading-java-8-to-12?itm_source=infoq&amp;itm_medium=popular_widget&amp;itm_campaign=popular_content_list&amp;itm_content="&gt;Worth a viewing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;So, you want to use MQTT &lt;em&gt;and&lt;/em&gt; Apache Kafka? This might be &lt;a href="https://www.infoq.com/news/2019/04/hivemq-extension-kafka-mqtt?itm_source=infoq&amp;itm_medium=popular_widget&amp;itm_campaign=popular_content_list&amp;itm_content="&gt;what you&amp;rsquo;re looking for.. &lt;/a&gt;. (You might also consider using Spring Integraton&amp;rsquo;s Kafka and MQTT adapters..)&lt;/li&gt;
-  &lt;li&gt;Have you taken the 2019 &lt;a href="https://www.cloudfoundry.org/blog/take-the-2019-cloud-foundry-user-survey/"&gt;CloudFoundry User Survey?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Open Service Broker 3.0.0 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-3-0-0-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Roy Clarkson</name>
-    </author>
-    <id>tag:spring.io,2019-04-29:3660</id>
-    <updated>2019-04-29T16:40:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the general availability of Spring Cloud Open Service Broker 3.0.0. This release introduces a significant shift from imperative to reactive APIs in order to support the new reactive-based web framework, Spring WebFlux. v3.0.0 was developed in parallel with v2.1.x and has feature parity with &lt;a href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-2-1-2-released"&gt;v2.1.2&lt;/a&gt;. Looking forward, all new features will only be added to the 3.x releases.&lt;/p&gt;
-&lt;p&gt;New features available in v3.0.0:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Continue support for &lt;a href="https://www.openservicebrokerapi.org/blog/2018/08/21/open-service-broker-v2-14-released"&gt;Open Service Broker API v2.14&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Support Spring Boot 2.1 and Spring Framework 5.1&lt;/li&gt;
-  &lt;li&gt;Introduce support for Spring WebFlux via a new Reactive API (based on Project Reactor)&lt;/li&gt;
-  &lt;li&gt;Continue support for Spring MVC&lt;/li&gt;
-  &lt;li&gt;Rename the Spring Boot starter because it now supports both Spring web frameworks&lt;/li&gt;
-  &lt;li&gt;Introduce several reactive life cycle hooks for performing additional operations&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
-  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker&amp;lt;/artifactId&amp;gt;&#xD;
-  &amp;lt;version&amp;gt;3.0.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.0.RELEASE/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Open Service Broker 2.1.2 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/04/29/spring-cloud-open-service-broker-2-1-2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Roy Clarkson</name>
-    </author>
-    <id>tag:spring.io,2019-04-29:3659</id>
-    <updated>2019-04-29T16:35:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the release of Spring Cloud Open Service Broker 2.1.2. We want to thank Guillaume Berche for his significant contributions to this release and to the project overall. This is a maintenance release that incorporates several updates and improvements, including the following:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Continued support for &lt;a href="https://www.openservicebrokerapi.org/blog/2018/08/21/open-service-broker-v2-14-released"&gt;Open Service Broker API v2.14&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Upgrade to Spring Boot 2.0.9.RELEASE and Spring Framework 5.0.13.RELEASE&lt;/li&gt;
-  &lt;li&gt;Fix compatibility issue with Spring Boot DevTools&lt;/li&gt;
-  &lt;li&gt;Allow nulls in optional Boolean fields and no longer set default values&lt;/li&gt;
-  &lt;li&gt;Use valid JSON schema examples&lt;/li&gt;
-  &lt;li&gt;Fix JSON serialization of model objects for use by OSB clients&lt;/li&gt;
-  &lt;li&gt;Fix JSON schema not properly mapping to arrays&lt;/li&gt;
-  &lt;li&gt;Add property binding support for CloudFoundry service plan metadata&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
-  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker-webmc&amp;lt;/artifactId&amp;gt;&#xD;
-  &amp;lt;version&amp;gt;2.1.2.RELEASE&amp;lt;/version&amp;gt;&#xD;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/2.1.2.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/2.1.2.RELEASE/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;</content>
   </entry>
 </feed>
