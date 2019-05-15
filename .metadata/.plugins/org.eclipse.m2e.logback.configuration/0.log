@@ -13594,3 +13594,717 @@ Caused by: java.io.IOException: read past EOF
 2019-05-07 14:03:23,211 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-05-07 14:03:23,212 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-05-07 14:03:23,212 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/05-properties-demo/src/test/resources
+2019-05-12 16:52:25,538 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-05-12 16:52:28,489 [Worker-14] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Error changing index details central|https://repo.maven.apache.org/maven2
+java.io.IOException: read past EOF
+	at org.apache.lucene.store.BufferedIndexInput.readBytes(BufferedIndexInput.java:135) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.CompoundFileReader$CSIndexInput.readInternal(CompoundFileReader.java:247) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.BufferedIndexInput.refill(BufferedIndexInput.java:157) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.BufferedIndexInput.readByte(BufferedIndexInput.java:38) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.IndexInput.readInt(IndexInput.java:68) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentTermEnum.<init>(SegmentTermEnum.java:50) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.TermInfosReader.<init>(TermInfosReader.java:76) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160) ~[org.eclipse.m2e.maven.indexer_1.8.3.20180227-2135/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:965) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:932) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:878) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:163) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:263) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56) [org.eclipse.core.jobs_3.9.3.v20180115-1757.jar:na]
+2019-05-12 16:52:28,492 [Worker-14] ERROR o.e.m.c.i.r.RepositoryRegistry - Could not add repository index
+org.eclipse.core.runtime.CoreException: Could not add repository index
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:945) ~[org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.repositoryAdded(NexusIndexManager.java:878) ~[org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.addRepository(RepositoryRegistry.java:163) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistry.updateRegistry(RepositoryRegistry.java:263) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.repository.RepositoryRegistryUpdateJob.run(RepositoryRegistryUpdateJob.java:47) [org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56) [org.eclipse.core.jobs_3.9.3.v20180115-1757.jar:na]
+Caused by: java.io.IOException: read past EOF
+	at org.apache.lucene.store.BufferedIndexInput.readBytes(BufferedIndexInput.java:135) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.CompoundFileReader$CSIndexInput.readInternal(CompoundFileReader.java:247) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.BufferedIndexInput.refill(BufferedIndexInput.java:157) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.BufferedIndexInput.readByte(BufferedIndexInput.java:38) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.store.IndexInput.readInt(IndexInput.java:68) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentTermEnum.<init>(SegmentTermEnum.java:50) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.TermInfosReader.<init>(TermInfosReader.java:76) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.initialize(SegmentReader.java:366) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:306) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.SegmentReader.get(SegmentReader.java:236) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.DocumentsWriter.applyDeletes(DocumentsWriter.java:915) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.applyDeletes(IndexWriter.java:4339) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:3579) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:3450) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.closeInternal(IndexWriter.java:1638) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1602) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1578) ~[lucene-core-2.4.1.jar:2.4.1 750176 - 2009-03-04 21:56:52]
+	at org.apache.maven.index.context.NexusIndexWriter.close(NexusIndexWriter.java:58) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareCleanIndex(DefaultIndexingContext.java:235) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.prepareIndex(DefaultIndexingContext.java:205) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.context.DefaultIndexingContext.<init>(DefaultIndexingContext.java:173) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.DefaultNexusIndexer.addIndexingContextForced(DefaultNexusIndexer.java:160) ~[org.eclipse.m2e.maven.indexer_1.8.3.20180227-2135/:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.createIndexingContext(NexusIndexManager.java:965) ~[org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.setIndexDetails(NexusIndexManager.java:932) ~[org.eclipse.m2e.core_1.8.3.20180227-2137.jar:na]
+	... 5 common frames omitted
+2019-05-12 16:52:30,259 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:30,264 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 16:52:30,277 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 16:52:30,279 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:30,280 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/01-spring-boot-demo/src/test/resources
+2019-05-12 16:52:30,983 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:30,983 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 16:52:30,984 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 16:52:30,986 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:30,986 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/02-dev-tools-demo/src/test/resources
+2019-05-12 16:52:31,399 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:31,400 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 16:52:31,401 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 16:52:31,403 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:31,403 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/03-actuator-demo/src/test/resources
+2019-05-12 16:52:31,665 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:31,665 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 16:52:31,667 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 16:52:31,668 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:31,668 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/04-command-line-demo/src/test/resources
+2019-05-12 16:52:31,918 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:31,918 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 16:52:31,919 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 16:52:31,920 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:52:31,921 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/05-properties-demo/src/test/resources
+2019-05-12 16:53:40,272 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/pom.xml.
+2019-05-12 16:53:40,609 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-jpa/2.1.4.RELEASE/spring-boot-starter-data-jpa-2.1.4.RELEASE.pom
+2019-05-12 16:53:40,637 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-jpa/2.1.4.RELEASE/spring-boot-starter-data-jpa-2.1.4.RELEASE.pom
+2019-05-12 16:53:40,675 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-aop/2.1.4.RELEASE/spring-boot-starter-aop-2.1.4.RELEASE.pom
+2019-05-12 16:53:40,685 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-aop/2.1.4.RELEASE/spring-boot-starter-aop-2.1.4.RELEASE.pom
+2019-05-12 16:53:40,764 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/2.1.4.RELEASE/spring-boot-starter-jdbc-2.1.4.RELEASE.pom
+2019-05-12 16:53:40,774 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/2.1.4.RELEASE/spring-boot-starter-jdbc-2.1.4.RELEASE.pom
+2019-05-12 16:53:40,793 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/5.1.6.RELEASE/spring-jdbc-5.1.6.RELEASE.pom
+2019-05-12 16:53:40,803 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/5.1.6.RELEASE/spring-jdbc-5.1.6.RELEASE.pom
+2019-05-12 16:53:40,812 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-tx/5.1.6.RELEASE/spring-tx-5.1.6.RELEASE.pom
+2019-05-12 16:53:40,823 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-tx/5.1.6.RELEASE/spring-tx-5.1.6.RELEASE.pom
+2019-05-12 16:53:40,843 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.pom
+2019-05-12 16:53:40,854 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.pom
+2019-05-12 16:53:40,881 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-jpa/2.1.6.RELEASE/spring-data-jpa-2.1.6.RELEASE.pom
+2019-05-12 16:53:40,893 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-jpa/2.1.6.RELEASE/spring-data-jpa-2.1.6.RELEASE.pom
+2019-05-12 16:53:40,911 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-parent/2.1.6.RELEASE/spring-data-parent-2.1.6.RELEASE.pom
+2019-05-12 16:53:40,931 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-parent/2.1.6.RELEASE/spring-data-parent-2.1.6.RELEASE.pom
+2019-05-12 16:53:40,950 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.pom
+2019-05-12 16:53:40,961 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.pom
+2019-05-12 16:53:40,980 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-orm/5.1.6.RELEASE/spring-orm-5.1.6.RELEASE.pom
+2019-05-12 16:53:40,990 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-orm/5.1.6.RELEASE/spring-orm-5.1.6.RELEASE.pom
+2019-05-12 16:53:41,001 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aspects/5.1.6.RELEASE/spring-aspects-5.1.6.RELEASE.pom
+2019-05-12 16:53:41,010 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aspects/5.1.6.RELEASE/spring-aspects-5.1.6.RELEASE.pom
+2019-05-12 16:53:41,059 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.pom
+2019-05-12 16:53:41,070 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.pom
+2019-05-12 16:53:41,117 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-jpa/2.1.4.RELEASE/spring-boot-starter-data-jpa-2.1.4.RELEASE.jar
+2019-05-12 16:53:41,128 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-jpa/2.1.4.RELEASE/spring-boot-starter-data-jpa-2.1.4.RELEASE.jar
+2019-05-12 16:53:41,137 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-aop/2.1.4.RELEASE/spring-boot-starter-aop-2.1.4.RELEASE.jar
+2019-05-12 16:53:41,148 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-aop/2.1.4.RELEASE/spring-boot-starter-aop-2.1.4.RELEASE.jar
+2019-05-12 16:53:41,157 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/2.1.4.RELEASE/spring-boot-starter-jdbc-2.1.4.RELEASE.jar
+2019-05-12 16:53:41,167 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/2.1.4.RELEASE/spring-boot-starter-jdbc-2.1.4.RELEASE.jar
+2019-05-12 16:53:41,179 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/5.1.6.RELEASE/spring-jdbc-5.1.6.RELEASE.jar
+2019-05-12 16:53:41,246 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/5.1.6.RELEASE/spring-jdbc-5.1.6.RELEASE.jar
+2019-05-12 16:53:41,256 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.jar
+2019-05-12 16:53:41,808 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final.jar
+2019-05-12 16:53:41,820 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-jpa/2.1.6.RELEASE/spring-data-jpa-2.1.6.RELEASE.jar
+2019-05-12 16:53:41,857 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-jpa/2.1.6.RELEASE/spring-data-jpa-2.1.6.RELEASE.jar
+2019-05-12 16:53:41,873 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.jar
+2019-05-12 16:53:41,965 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.jar
+2019-05-12 16:53:41,974 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-orm/5.1.6.RELEASE/spring-orm-5.1.6.RELEASE.jar
+2019-05-12 16:53:42,005 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-orm/5.1.6.RELEASE/spring-orm-5.1.6.RELEASE.jar
+2019-05-12 16:53:42,018 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-tx/5.1.6.RELEASE/spring-tx-5.1.6.RELEASE.jar
+2019-05-12 16:53:42,044 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-tx/5.1.6.RELEASE/spring-tx-5.1.6.RELEASE.jar
+2019-05-12 16:53:42,055 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aspects/5.1.6.RELEASE/spring-aspects-5.1.6.RELEASE.jar
+2019-05-12 16:53:42,074 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aspects/5.1.6.RELEASE/spring-aspects-5.1.6.RELEASE.jar
+2019-05-12 16:53:42,107 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.jar
+2019-05-12 16:53:42,281 [Worker-15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.jar
+2019-05-12 16:53:42,552 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /cruddemo/src/main/java
+2019-05-12 16:53:42,552 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /cruddemo/src/main/resources
+2019-05-12 16:53:42,554 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /cruddemo/src/main/resources
+2019-05-12 16:53:42,556 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /cruddemo/src/test/java
+2019-05-12 16:53:42,656 [Worker-15] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2019-05-12 16:53:43,282 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:53:43,282 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 16:53:43,283 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 16:53:43,284 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 16:53:43,285 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 21:59:33,461 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 21:59:33,465 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 21:59:33,465 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 21:59:33,467 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 21:59:33,467 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:00:40,851 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:00:40,851 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:00:40,851 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:00:40,853 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:00:40,854 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:01:11,865 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:01:11,868 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:01:11,869 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:01:11,871 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:01:11,871 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:01:49,784 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:01:49,785 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:01:49,785 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:01:49,787 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:01:49,787 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:03:28,044 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:03:28,045 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:03:28,046 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:03:28,047 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:03:28,047 [Worker-66] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:21:44,103 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:21:44,103 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:21:44,104 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:21:44,105 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:21:44,106 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:22:30,354 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:22:30,355 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:22:30,356 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:22:30,358 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:22:30,358 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:22:32,717 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:22:32,718 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:22:32,719 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:22:32,720 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:22:32,721 [Worker-77] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:24:19,533 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:24:19,534 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:24:19,535 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:24:19,536 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:24:19,536 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:25:40,523 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:25:40,523 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:25:40,524 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:25:40,526 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:25:40,526 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:37:08,103 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:37:08,104 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:37:08,105 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:37:08,106 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:37:08,106 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:53:54,087 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:53:54,088 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:53:54,088 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:53:54,090 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:53:54,090 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 22:54:38,537 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:54:38,537 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 22:54:38,538 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 22:54:38,539 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 22:54:38,540 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:02:53,415 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:02:53,415 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:02:53,416 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:02:53,418 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:02:53,418 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:08:02,324 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:08:02,324 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:08:02,325 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:08:02,326 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:08:02,326 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:16:25,644 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:16:25,644 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:16:25,645 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:16:25,646 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:16:25,646 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:24:22,247 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:24:22,247 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:24:22,248 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:24:22,250 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:24:22,250 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:27:43,746 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:27:43,746 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:27:43,747 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:27:43,748 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:27:43,749 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:28:26,521 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:28:26,521 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:28:26,522 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:28:26,523 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:28:26,523 [Worker-114] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:29:45,083 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:29:45,083 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:29:45,085 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:29:45,087 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:29:45,087 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:30:22,244 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:30:22,245 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:30:22,246 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:30:22,247 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:30:22,247 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:31:44,609 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:31:44,610 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:31:44,611 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:31:44,612 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:31:44,612 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:32:32,383 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:32:32,383 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:32:32,384 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:32:32,385 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:32:32,385 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:32:58,741 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:32:58,741 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:32:58,742 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:32:58,743 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:32:58,743 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:33:58,080 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:33:58,081 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:33:58,082 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:33:58,083 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:33:58,083 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:34:34,386 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:34:34,387 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:34:34,388 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:34:34,389 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:34:34,389 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:36:16,326 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:36:16,326 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:36:16,327 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:36:16,328 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:36:16,328 [Worker-115] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:37:34,623 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:37:34,623 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:37:34,624 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:37:34,626 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:37:34,626 [Worker-110] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-12 23:40:58,386 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:40:58,387 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-12 23:40:58,394 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-12 23:40:58,396 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-12 23:40:58,396 [Worker-109] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-13 13:37:29,798 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 13:37:29,799 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 13:37:29,800 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 13:37:29,802 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 13:37:29,802 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-13 13:52:09,641 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 13:52:09,641 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 13:52:09,642 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 13:52:09,644 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 13:52:09,644 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-13 14:04:26,720 [Worker-263] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 14:04:26,721 [Worker-263] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 14:04:26,722 [Worker-263] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 14:04:26,722 [Worker-263] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 14:04:26,723 [Worker-263] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-13 15:45:35,765 [Worker-296] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 15:45:35,766 [Worker-296] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 15:45:35,767 [Worker-296] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 15:45:35,768 [Worker-296] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 15:45:35,769 [Worker-296] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/cruddemo/src/test/resources
+2019-05-13 17:56:18,273 [Worker-349] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/06-hibernate-with-service-demo/pom.xml.
+2019-05-13 17:56:18,710 [Worker-349] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:56:18,710 [Worker-349] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 17:56:18,711 [Worker-349] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 17:56:18,712 [Worker-349] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:56:18,712 [Worker-349] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/06-hibernate-with-service-demo/src/test/resources
+2019-05-13 17:56:20,108 [Worker-348] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:56:20,108 [Worker-348] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 17:56:20,109 [Worker-348] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 17:56:20,111 [Worker-348] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:56:20,111 [Worker-348] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/06-hibernate-with-service-demo/src/test/resources
+2019-05-13 17:57:05,127 [Worker-347] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/pom.xml.
+2019-05-13 17:57:05,370 [Worker-347] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:57:05,370 [Worker-347] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 17:57:05,371 [Worker-347] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 17:57:05,373 [Worker-347] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:57:05,373 [Worker-347] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/src/test/resources
+2019-05-13 17:57:06,909 [Worker-345] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:57:06,910 [Worker-345] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 17:57:06,911 [Worker-345] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 17:57:06,912 [Worker-345] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 17:57:06,912 [Worker-345] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/src/test/resources
+2019-05-13 18:07:28,723 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 18:07:28,723 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 18:07:28,724 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 18:07:28,725 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 18:07:28,725 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/src/test/resources
+2019-05-13 18:12:46,825 [Worker-354] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 18:12:46,825 [Worker-354] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 18:12:46,826 [Worker-354] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 18:12:46,827 [Worker-354] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 18:12:46,827 [Worker-354] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/src/test/resources
+2019-05-13 18:15:08,401 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 18:15:08,401 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 18:15:08,402 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 18:15:08,403 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 18:15:08,403 [Worker-346] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/src/test/resources
+2019-05-13 20:17:18,701 [Worker-395] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 20:17:18,702 [Worker-395] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 20:17:18,702 [Worker-395] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 20:17:18,704 [Worker-395] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 20:17:18,704 [Worker-395] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/src/test/resources
+2019-05-13 22:31:38,080 [Worker-451] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/pom.xml.
+2019-05-13 22:31:38,377 [Worker-451] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:31:38,378 [Worker-451] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:31:38,378 [Worker-451] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:31:38,380 [Worker-451] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:31:38,380 [Worker-451] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-13 22:31:39,861 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:31:39,861 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:31:39,862 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:31:39,864 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:31:39,864 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-13 22:32:13,422 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:32:13,422 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:32:13,423 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:32:13,424 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:32:13,424 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-13 22:33:31,939 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:33:31,939 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:33:31,940 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:33:31,942 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:33:31,942 [Worker-452] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-13 22:34:54,810 [Worker-454] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:34:54,810 [Worker-454] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:34:54,811 [Worker-454] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:34:54,812 [Worker-454] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:34:54,812 [Worker-454] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-13 22:41:15,671 [Worker-449] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:41:15,672 [Worker-449] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:41:15,672 [Worker-449] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:41:15,673 [Worker-449] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:41:15,674 [Worker-449] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-13 22:42:45,170 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:42:45,170 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:42:45,171 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:42:45,172 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:42:45,172 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-13 22:44:47,634 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:44:47,635 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-13 22:44:47,635 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-13 22:44:47,640 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-13 22:44:47,640 [Worker-453] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-14 16:18:42,322 [Worker-677] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/pom.xml.
+2019-05-14 16:18:42,583 [Worker-677] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:18:42,583 [Worker-677] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:18:42,583 [Worker-677] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:18:42,584 [Worker-677] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:18:42,584 [Worker-677] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 16:18:43,981 [Worker-682] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:18:43,982 [Worker-682] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:18:43,982 [Worker-682] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:18:43,984 [Worker-682] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:18:43,984 [Worker-682] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 16:26:27,040 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/pom.xml.
+2019-05-14 16:26:27,280 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-rest/2.1.4.RELEASE/spring-boot-starter-data-rest-2.1.4.RELEASE.pom
+2019-05-14 16:26:27,340 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-rest/2.1.4.RELEASE/spring-boot-starter-data-rest-2.1.4.RELEASE.pom
+2019-05-14 16:26:27,398 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/3.1.6.RELEASE/spring-data-rest-webmvc-3.1.6.RELEASE.pom
+2019-05-14 16:26:27,418 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/3.1.6.RELEASE/spring-data-rest-webmvc-3.1.6.RELEASE.pom
+2019-05-14 16:26:27,427 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-parent/3.1.6.RELEASE/spring-data-rest-parent-3.1.6.RELEASE.pom
+2019-05-14 16:26:27,438 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-parent/3.1.6.RELEASE/spring-data-rest-parent-3.1.6.RELEASE.pom
+2019-05-14 16:26:27,448 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/3.1.6.RELEASE/spring-data-rest-core-3.1.6.RELEASE.pom
+2019-05-14 16:26:27,457 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/3.1.6.RELEASE/spring-data-rest-core-3.1.6.RELEASE.pom
+2019-05-14 16:26:27,466 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.25.1.RELEASE/spring-hateoas-0.25.1.RELEASE.pom
+2019-05-14 16:26:27,486 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.25.1.RELEASE/spring-hateoas-0.25.1.RELEASE.pom
+2019-05-14 16:26:27,496 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.8.11.20181123/jackson-bom-2.8.11.20181123.pom
+2019-05-14 16:26:27,506 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.8.11.20181123/jackson-bom-2.8.11.20181123.pom
+2019-05-14 16:26:27,556 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.pom
+2019-05-14 16:26:27,565 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.pom
+2019-05-14 16:26:27,575 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin/1.2.0.RELEASE/spring-plugin-1.2.0.RELEASE.pom
+2019-05-14 16:26:27,585 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin/1.2.0.RELEASE/spring-plugin-1.2.0.RELEASE.pom
+2019-05-14 16:26:27,604 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2019-05-14 16:26:27,615 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2019-05-14 16:26:27,634 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2019-05-14 16:26:27,654 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2019-05-14 16:26:27,703 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-rest/2.1.4.RELEASE/spring-boot-starter-data-rest-2.1.4.RELEASE.jar
+2019-05-14 16:26:27,716 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-data-rest/2.1.4.RELEASE/spring-boot-starter-data-rest-2.1.4.RELEASE.jar
+2019-05-14 16:26:27,738 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/3.1.6.RELEASE/spring-data-rest-webmvc-3.1.6.RELEASE.jar
+2019-05-14 16:26:27,812 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/3.1.6.RELEASE/spring-data-rest-webmvc-3.1.6.RELEASE.jar
+2019-05-14 16:26:27,826 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/3.1.6.RELEASE/spring-data-rest-core-3.1.6.RELEASE.jar
+2019-05-14 16:26:27,862 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/3.1.6.RELEASE/spring-data-rest-core-3.1.6.RELEASE.jar
+2019-05-14 16:26:27,872 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.25.1.RELEASE/spring-hateoas-0.25.1.RELEASE.jar
+2019-05-14 16:26:27,911 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.25.1.RELEASE/spring-hateoas-0.25.1.RELEASE.jar
+2019-05-14 16:26:27,920 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+2019-05-14 16:26:27,930 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+2019-05-14 16:26:27,939 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2019-05-14 16:26:27,950 [Worker-684] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2019-05-14 16:26:28,151 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot.demo:mycoolapp:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/01-spring-boot-demo/pom.xml.
+2019-05-14 16:26:28,305 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot.demo:mycoolapp:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/02-dev-tools-demo/pom.xml.
+2019-05-14 16:26:28,436 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot.demo:mycoolapp:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/03-actuator-demo/pom.xml.
+2019-05-14 16:26:28,562 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot.demo:mycoolapp:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/04-command-line-demo/pom.xml.
+2019-05-14 16:26:28,640 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot.demo:mycoolapp:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/05-properties-demo/pom.xml.
+2019-05-14 16:26:28,835 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/06-hibernate-with-service-demo/pom.xml.
+2019-05-14 16:26:28,940 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/pom.xml.
+2019-05-14 16:26:29,087 [Worker-684] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:cruddemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/pom.xml.
+2019-05-14 16:26:29,299 [Worker-684] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:29,299 [Worker-684] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:29,299 [Worker-684] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:29,300 [Worker-684] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:29,300 [Worker-684] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 16:26:30,558 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:30,558 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:30,558 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:30,559 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:30,559 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/01-spring-boot-demo/src/test/resources
+2019-05-14 16:26:30,849 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:30,849 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:30,849 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:30,851 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:30,851 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/02-dev-tools-demo/src/test/resources
+2019-05-14 16:26:31,133 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,135 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:26:31,136 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:31,137 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,137 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/03-actuator-demo/src/test/resources
+2019-05-14 16:26:31,343 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,343 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:26:31,345 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:31,346 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,346 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/04-command-line-demo/src/test/resources
+2019-05-14 16:26:31,574 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,574 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:26:31,576 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:31,580 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,580 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/05-properties-demo/src/test/resources
+2019-05-14 16:26:31,870 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,870 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:31,870 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:31,871 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:31,871 [Worker-672] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/06-hibernate-with-service-demo/src/test/resources
+2019-05-14 16:26:32,156 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:32,157 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:26:32,158 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:32,159 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:32,159 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/07-jpa-cruddemo/src/test/resources
+2019-05-14 16:26:32,411 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:32,411 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:32,411 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:32,412 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:32,412 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/08-spring-data-jpa-cruddemo/src/test/resources
+2019-05-14 16:26:32,754 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:32,755 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:26:32,756 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:32,757 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:32,757 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 16:26:36,630 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:36,630 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:26:36,631 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:26:36,632 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:26:36,632 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 16:31:35,907 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:31:35,908 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 16:31:35,909 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 16:31:35,911 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 16:31:35,911 [Worker-686] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 18:09:59,858 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:09:59,859 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 18:09:59,860 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 18:09:59,861 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:09:59,861 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 18:11:56,482 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:11:56,483 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 18:11:56,484 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 18:11:56,485 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:11:56,485 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 18:12:39,158 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:12:39,158 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 18:12:39,159 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 18:12:39,160 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:12:39,160 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 18:15:48,229 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:15:48,229 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 18:15:48,229 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 18:15:48,230 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 18:15:48,231 [Worker-678] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/09-spring-data-rest-cruddemo/src/test/resources
+2019-05-14 21:24:11,642 [Worker-785] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:thymeleafdemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/thymeleafdemo/pom.xml.
+2019-05-14 21:24:11,777 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-thymeleaf/2.1.4.RELEASE/spring-boot-starter-thymeleaf-2.1.4.RELEASE.pom
+2019-05-14 21:24:11,836 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-thymeleaf/2.1.4.RELEASE/spring-boot-starter-thymeleaf-2.1.4.RELEASE.pom
+2019-05-14 21:24:11,913 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf-spring5/3.0.11.RELEASE/thymeleaf-spring5-3.0.11.RELEASE.pom
+2019-05-14 21:24:11,934 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf-spring5/3.0.11.RELEASE/thymeleaf-spring5-3.0.11.RELEASE.pom
+2019-05-14 21:24:11,942 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.pom
+2019-05-14 21:24:11,953 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.pom
+2019-05-14 21:24:11,962 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.pom
+2019-05-14 21:24:11,972 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.pom
+2019-05-14 21:24:11,982 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.pom
+2019-05-14 21:24:11,992 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.pom
+2019-05-14 21:24:12,002 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.4.RELEASE/thymeleaf-extras-java8time-3.0.4.RELEASE.pom
+2019-05-14 21:24:12,013 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.4.RELEASE/thymeleaf-extras-java8time-3.0.4.RELEASE.pom
+2019-05-14 21:24:12,021 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/ognl/ognl/3.1.12/ognl-3.1.12.pom
+2019-05-14 21:24:12,032 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/ognl/ognl/3.1.12/ognl-3.1.12.pom
+2019-05-14 21:24:12,159 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-thymeleaf/2.1.4.RELEASE/spring-boot-starter-thymeleaf-2.1.4.RELEASE.jar
+2019-05-14 21:24:12,170 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-thymeleaf/2.1.4.RELEASE/spring-boot-starter-thymeleaf-2.1.4.RELEASE.jar
+2019-05-14 21:24:12,182 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf-spring5/3.0.11.RELEASE/thymeleaf-spring5-3.0.11.RELEASE.jar
+2019-05-14 21:24:12,219 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf-spring5/3.0.11.RELEASE/thymeleaf-spring5-3.0.11.RELEASE.jar
+2019-05-14 21:24:12,232 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar
+2019-05-14 21:24:12,317 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/thymeleaf/thymeleaf/3.0.11.RELEASE/thymeleaf-3.0.11.RELEASE.jar
+2019-05-14 21:24:12,329 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar
+2019-05-14 21:24:12,357 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar
+2019-05-14 21:24:12,368 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar
+2019-05-14 21:24:12,386 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar
+2019-05-14 21:24:12,398 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.4.RELEASE/thymeleaf-extras-java8time-3.0.4.RELEASE.jar
+2019-05-14 21:24:12,416 [Worker-785] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.4.RELEASE/thymeleaf-extras-java8time-3.0.4.RELEASE.jar
+2019-05-14 21:24:12,532 [Worker-785] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /thymeleafdemo/src/main/java
+2019-05-14 21:24:12,532 [Worker-785] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /thymeleafdemo/src/main/resources
+2019-05-14 21:24:12,535 [Worker-785] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /thymeleafdemo/src/main/resources
+2019-05-14 21:24:12,537 [Worker-785] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /thymeleafdemo/src/test/java
+2019-05-14 21:24:12,598 [Worker-785] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2019-05-14 21:24:13,089 [Worker-788] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:24:13,090 [Worker-788] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 21:24:13,090 [Worker-788] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:24:13,092 [Worker-788] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:24:13,092 [Worker-788] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/thymeleafdemo/src/test/resources
+2019-05-14 21:24:14,280 [Worker-787] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:24:14,280 [Worker-787] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:24:14,280 [Worker-787] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:24:14,282 [Worker-787] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:24:14,282 [Worker-787] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/thymeleafdemo/src/test/resources
+2019-05-14 21:25:04,541 [Worker-790] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:thymeleafdemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/pom.xml.
+2019-05-14 21:25:04,665 [Worker-790] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:25:04,665 [Worker-790] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 21:25:04,665 [Worker-790] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:25:04,666 [Worker-790] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:25:04,667 [Worker-790] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/src/test/resources
+2019-05-14 21:25:05,965 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:25:05,965 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 21:25:05,966 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:25:05,967 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:25:05,967 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/src/test/resources
+2019-05-14 21:26:24,687 [Worker-785] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:26:24,687 [Worker-785] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 21:26:24,688 [Worker-785] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:26:24,689 [Worker-785] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:26:24,689 [Worker-785] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/src/test/resources
+2019-05-14 21:26:38,315 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:26:38,316 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 21:26:38,316 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:26:38,317 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:26:38,317 [Worker-726] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/src/test/resources
+2019-05-14 21:31:08,785 [Worker-792] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:31:08,786 [Worker-792] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 21:31:08,786 [Worker-792] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:31:08,787 [Worker-792] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:31:08,787 [Worker-792] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/src/test/resources
+2019-05-14 21:33:02,339 [Worker-794] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:33:02,339 [Worker-794] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 21:33:02,340 [Worker-794] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 21:33:02,346 [Worker-794] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 21:33:02,346 [Worker-794] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/src/test/resources
+2019-05-14 22:45:05,218 [Worker-813] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 22:45:05,219 [Worker-813] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 22:45:05,219 [Worker-813] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 22:45:05,222 [Worker-813] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 22:45:05,222 [Worker-813] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/10-thymeleafdemo-helloworld/src/test/resources
+2019-05-14 23:12:37,972 [Worker-826] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:thymeleafdemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/pom.xml.
+2019-05-14 23:12:38,210 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:12:38,211 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:12:38,211 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:12:38,213 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:12:38,214 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/src/test/resources
+2019-05-14 23:12:39,604 [Worker-825] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:12:39,605 [Worker-825] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:12:39,606 [Worker-825] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:12:39,608 [Worker-825] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:12:39,608 [Worker-825] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/src/test/resources
+2019-05-14 23:15:07,158 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:15:07,159 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 23:15:07,159 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 23:15:07,160 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:15:07,160 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/src/test/resources
+2019-05-14 23:15:32,283 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:15:32,283 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 23:15:32,283 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:15:32,285 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:15:32,285 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/src/test/resources
+2019-05-14 23:16:03,974 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:16:03,974 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 23:16:03,974 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:16:03,976 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:16:03,976 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/src/test/resources
+2019-05-14 23:18:08,923 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:18:08,924 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 23:18:08,924 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:18:08,926 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:18:08,926 [Worker-827] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/src/test/resources
+2019-05-14 23:18:29,710 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:18:29,710 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-14 23:18:29,710 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-14 23:18:29,712 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-14 23:18:29,712 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/11-thymeleafdemo-helloworld-css/src/test/resources
+2019-05-15 00:05:18,226 [Worker-842] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:thymeleafdemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/pom.xml.
+2019-05-15 00:05:18,415 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:05:18,415 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:05:18,416 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-15 00:05:18,420 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:05:18,420 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:05:19,688 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:05:19,688 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:05:19,689 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-15 00:05:19,691 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:05:19,691 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:06:15,239 [Worker-848] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:06:15,240 [Worker-848] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:06:15,241 [Worker-848] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-15 00:06:15,242 [Worker-848] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:06:15,242 [Worker-848] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:06:38,284 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:06:38,285 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:06:38,285 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-15 00:06:38,286 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:06:38,287 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:08:56,626 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:08:56,626 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:08:56,627 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-15 00:08:56,628 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:08:56,628 [Worker-847] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:09:29,052 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:09:29,052 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:09:29,053 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-05-15 00:09:29,054 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:09:29,054 [Worker-826] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:18:54,422 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:18:54,422 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-15 00:18:54,422 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:18:54,424 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:18:54,424 [Worker-842] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:19:08,740 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:19:08,741 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:19:08,742 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-05-15 00:19:08,743 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:19:08,743 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:24:19,768 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:24:19,768 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-15 00:24:19,768 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:24:19,770 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:24:19,770 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:25:09,028 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:25:09,028 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-15 00:25:09,029 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:25:09,030 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:25:09,030 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/12-thymeleafdemo-employees-list/src/test/resources
+2019-05-15 00:29:22,093 [Worker-850] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.chrisyoo.springboot:thymeleafdemo:0.0.1-SNAPSHOT @ /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/13-thymeleafdemo-employees-list-css/pom.xml.
+2019-05-15 00:29:22,326 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:29:22,326 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:29:22,327 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-05-15 00:29:22,334 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:29:22,334 [Worker-850] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/13-thymeleafdemo-employees-list-css/src/test/resources
+2019-05-15 00:29:23,676 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:29:23,677 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:29:23,678 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-05-15 00:29:23,681 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:29:23,681 [Worker-849] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/13-thymeleafdemo-employees-list-css/src/test/resources
+2019-05-15 00:31:51,344 [Worker-857] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:31:51,344 [Worker-857] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-15 00:31:51,344 [Worker-857] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:31:51,346 [Worker-857] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:31:51,346 [Worker-857] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/13-thymeleafdemo-employees-list-css/src/test/resources
+2019-05-15 00:33:37,625 [Worker-855] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:33:37,625 [Worker-855] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-15 00:33:37,625 [Worker-855] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-15 00:33:37,627 [Worker-855] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-15 00:33:37,627 [Worker-855] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/ChrisYoo/Desktop/REFERENCE/SoftwareProjects/Spring/ChadSpring/13-thymeleafdemo-employees-list-css/src/test/resources
